@@ -1,0 +1,222 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body{
+    padding: 1% 5%;
+    background: black !important;
+    height: 100vh;
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* design the card  */
+.card{
+    background: black; /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply a blur to the container's content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+.sub-div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    margin: -21.5px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: black;
+    transform: rotate(45deg);
+}
+.card::after {
+    content: '';
+    position: absolute;
+    margin: -21.5px;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background: black;
+    transform: rotate(45deg);
+}
+/* design the card  */
+
+
+.card > div > div{
+    font-size: 15px;
+}
+/* modal */
+.modal-dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80% !important;
+    width: 70% !important;
+}
+
+.modal-content{
+    background-color: #22466a !important;
+    color: #fff !important;
+    width: 70vw;
+}
+
+#modal-content{
+    font-size: 20px;
+}
+
+.modal-body{
+    height: 55vh;
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+.modal-title{
+    font-weight: bolder;
+    font-size: 25px;
+}
+/* modal */
+
+.grid-container {
+    display: grid;
+    grid-gap: 30px; /* Gap between grid items */
+}
+
+.grid-item {
+    color: #000;
+    text-align: center;
+    height: 15vh;
+    width: 125px;
+    cursor: pointer !important;
+}
+
+.span-2{
+    grid-column: span 2;
+}
+.heading{
+    margin-top: 20px;
+    height: 4vh;
+    cursor: text;
+    border: 0 !important;
+    width: auto;
+    font-weight: bold;
+}
+/* groups  */
+
+.g-1{
+    border: 2px solid #458dd5;
+    color: #458dd5 !important;
+}
+.g-1::before{
+    border-right: 2px solid #458dd5;
+}
+.g-1::after{
+    border-left: 2px solid #458dd5;
+}
+
+/* 2 */
+
+.g-2{
+    border: 2px solid #78b3b2;
+    color: #78b3b2 !important;
+}
+.g-2::before{
+    border-right: 2px solid #78b3b2;
+}
+.g-2::after{
+    border-left: 2px solid #78b3b2;
+}
+
+/* 3 */
+
+.g-3{
+    border: 2px solid #85c080;
+    color: #85c080 !important;
+}
+.g-3::before{
+    border-right: 2px solid #85c080;
+}
+.g-3::after{
+    border-left: 2px solid #85c080;
+}
+
+/* 4 */
+.g-4{
+    border: 2px solid #cfe991;
+    color: #cfe991 !important;
+}
+.g-4::before{
+    border-right: 2px solid #cfe991;
+}
+.g-4::after{
+    border-left: 2px solid #cfe991;
+}
+
+
+/* Responsive grid with 10 columns on larger screens */
+@media (min-width: 768px) {
+    body{
+        max-height: 100vh;
+        overflow-y: hidden;
+    }
+    .grid-container {
+        grid-template-rows: 50px 1fr;
+        /* grid-template-rows: repeat(10, 1fr);  */
+        width: 20vw;
+        position: absolute;
+    }
+    .grid-container:nth-child(1){
+        left: 2vw;
+    }
+    .grid-container:nth-child(2){
+        left: 27vw;
+    }
+    .grid-container:nth-child(3){
+        left: 52vw;
+    }
+    .grid-container:nth-child(4){
+        left: 77vw;
+    }
+    /* .grid-container{
+        grid-template-columns: repeat(10, 1fr); 
+    } */
+}
+/* Responsive grid with 2 columns on small screens such as mobile */
+@media (max-width: 767px) {
+    .grid-container {
+        grid-template-rows: repeat(2, 1fr); /* 2 columns */
+    }
+    .heading{
+        height: 12vh;
+    }
+    .modal-dialog{
+        width: 100% !important;
+        height: 100% !important;
+        overflow-x: hidden !important;
+    }
+    .modal-content{
+        width: 93% !important;
+        height: auto !important;
+    }
+    .modal-body{
+        flex-direction: column;
+    }
+}

@@ -47,7 +47,8 @@
         </div>
         <div class="grid-item card g-2" type="button" data-toggle="modal"
             data-target="#myModal">
-            <div class="sub-div">Cl<div>Classical</div>
+            <div class="sub-div">Cl
+                <div>Classical</div>
             </div>
         </div>
         <div class="grid-item card g-2" type="button" data-toggle="modal"
@@ -83,21 +84,29 @@
             </div>
         </div>
         <div class="grid-item card g-3" type="button" data-toggle="modal"
-            data-target="#myModal"><div class="sub-div">Ja
+            data-target="#myModal">
+            <div class="sub-div">Ja
                 <div>Jazz</div>
-            </div></div>
+            </div>
+        </div>
         <div class="grid-item card g-3" type="button" data-toggle="modal"
-            data-target="#myModal"><div class="sub-div">Sk
+            data-target="#myModal">
+            <div class="sub-div">Sk
                 <div>Ska</div>
-            </div></div>
+            </div>
+        </div>
         <div class="grid-item card g-3" type="button" data-toggle="modal"
-            data-target="#myModal"><div class="sub-div">Mu
+            data-target="#myModal">
+            <div class="sub-div">Mu
                 <div>Musical Theatre</div>
-            </div></div>
+            </div>
+        </div>
         <div class="grid-item card g-3" type="button" data-toggle="modal"
-            data-target="#myModal"><div class="sub-div">Fu
+            data-target="#myModal">
+            <div class="sub-div">Fu
                 <div>Funk</div>
-            </div></div>
+            </div>
+        </div>
     </div>
     <div class="grid-container">
         <div class="grid-item span-2 heading g-4">
@@ -105,11 +114,15 @@
         </div>
         <div class="grid-item card g-4" type="button" data-toggle="modal"
             data-target="#myModal">
-            1
+            <div class="sub-div">Po
+                <div>Pop</div>
+            </div>
         </div>
         <div class="grid-item card g-4" type="button" data-toggle="modal"
             data-target="#myModal">
-            1
+            <div class="sub-div">Hi
+                <div>Hip Hop</div>
+            </div>
         </div>
         <div class="grid-item card g-4" type="button" data-toggle="modal"
             data-target="#myModal">13</div>
@@ -132,18 +145,21 @@
                     <h4 class="modal-title" id="modal-header"></h4>
                 </div>
                 <div class="modal-body">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 left">
                         <img class="img-fluid position-relative" src="" alt="">
                         <br><br>
-                        <audio id="audio" controls>
-                            <source id="source" src="" type="audio/mpeg">
+                        <audio class="audio" controls>
+                            <source class="source" src="" type="audio/mpeg">
                         </audio>
                     </div>
-                    <div class="col-lg-6" id="modal-content">
+                    <div class="col-lg-6 col-md-6 right" id="modal-content">
                         
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <audio class="audio aud-mob" controls>
+                        <source class="source" src="" type="audio/mpeg">
+                    </audio>
                     <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Close</button>
                 </div>
             </div>
@@ -154,8 +170,11 @@
         const modalContent = document.getElementById("modal-content");
         const div = document.querySelectorAll(".card");
         const modalImage = document.querySelector("img");
-        const modalAudio = document.getElementById("source");
+        const audioMob = document.getElementsByClassName("aud-mob")[0];
         const close = document.getElementById("close");
+        //there are 2 modalAudio and audio; 1 for mobile and 1 for large screen
+        let modalAudio = document.getElementsByClassName("source");
+        let audio = document.getElementsByClassName("audio");
         const modalDict = {
             8:{
                 "content": "Also known as “erudite music”, the beginnings of classical music can be traced back to the 9th century.Its growth became more accentuated mainly during the Middle Ages (between the 16th and 18th centuries).\n\nClassical music is an erudite musical genre, characterized by the complexity of instrumentation and by being represented in the form of symphony, opera or other types of musical developments.\n\nNotable Artists: Pandit Ravi Shankar, Ustad Zakir Hussain, Ustad Bismillah Khan and Pandit Bhimsen Joshi were the famous artists who left their mark!!",
@@ -196,6 +215,46 @@
                 "content": "Funk is a music genre that originated in African American communities in the mid-1960s when musicians created a rhythmic, danceable new form of music through a mixture of various music genres that were popular among African-Americans in the mid-20th century.\n\nFunk features strong bass lines, often played by the electric bass guitar, and syncopated beats, where the emphasis is shifted from the strong beats to off beats. Funk also uses repeated vamps of single chords.\n\nPopular funk musicians include James Brown, Sly and the Family Stone, and George Clinton.",
                 "audio":"static/audio/funk.mp3",
                 "thumbnail":"static/img/funk.png"
+            },
+            20:{
+                "content": "Pop music is a genre of popular music that originated in its modern form during the mid-1950s in the United States and the United Kingdom.\n\nDuring the 1950s and 1960s, pop music encompassed rock and roll and the youth-oriented styles it influenced. Rock and pop music remained roughly synonymous until the late 1960s, after which pop became associated with music that was more commercial, ephemeral, and accessible.\n\nNotable Artists: John Lennon, Paul McCartney, George Harrison, and Ringo Starr.",
+                "audio":"static/audio/pop.mp3",
+                "thumbnail":"static/img/pop.png"
+            },
+            18:{
+                "content": "aa",
+                "audio":"static/audio/hip-hop.mp3",
+                "thumbnail":"static/img/hip-hop.png"
+            },
+            18:{
+                "content": "aa",
+                "audio":"static/audio/rnb.mp3",
+                "thumbnail":"static/img/rnb.png"
+            },
+            18:{
+                "content": "aa",
+                "audio":"static/audio/musical-theatre.mp3",
+                "thumbnail":"static/img/musical-theatre.png"
+            },
+            18:{
+                "content": "aa",
+                "audio":"static/audio/musical-theatre.mp3",
+                "thumbnail":"static/img/musical-theatre.png"
+            },
+            18:{
+                "content": "aa",
+                "audio":"static/audio/musical-theatre.mp3",
+                "thumbnail":"static/img/musical-theatre.png"
+            },
+            18:{
+                "content": "aa",
+                "audio":"static/audio/musical-theatre.mp3",
+                "thumbnail":"static/img/musical-theatre.png"
+            },
+            18:{
+                "content": "aa",
+                "audio":"static/audio/musical-theatre.mp3",
+                "thumbnail":"static/img/musical-theatre.png"
             }
         }
         for (let index = 0; index < div.length; index++) {
@@ -207,8 +266,10 @@
                 modalContent.innerText = "";
                 modalImage.src = "";
                 modalImage.alt = "";
-                modalAudio.src = "";
-                audio.load();
+                modalAudio[0].src = "";
+                audio[0].load();
+                modalAudio[1].src = "";
+                audio[1].load();
                 //End: clear the model(if previously opened) 
 
                 let modalHeading = div[index].children[0].children[0].textContent;
@@ -220,13 +281,16 @@
                 modalImage.src = modalDict[index]["thumbnail"];
                 modalImage.alt = modalHeading;
                 // Dynamically set Modal Audio
-                modalAudio.src = modalDict[index]["audio"];
-                audio.load();
+                modalAudio[0].src = modalDict[index]["audio"];
+                modalAudio[1].src = modalDict[index]["audio"];
+                audio[0].load();
+                audio[1].load();
             })
         }
         close.addEventListener("click",()=>{
-            // on close button click, stop playing music 
-            audio.pause();
+            // on close button click, stop playing music
+            audio[0].pause();
+            audio[1].pause();
         })
     </script>
 </body>
